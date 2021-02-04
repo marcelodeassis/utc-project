@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class TaskUser(models.Model):
     name = models.CharField(max_length=100)
 
@@ -16,10 +17,8 @@ class TaskState(models.Model):
 
 class Task(models.Model):
     description = models.CharField(max_length=100)
-    state = models.ForeignKey(TaskState, on_delete=models.CASCADE)
-    user = models.ForeignKey(TaskUser, on_delete=models.CASCADE)
+    state = models.ForeignKey(TaskState, on_delete=models.PROTECT)
+    user = models.ForeignKey(TaskUser, on_delete=models.PROTECT)
 
     def __str__(self):
         return " | ".join([self.description, self.state.name, self.user.name])
-
-
