@@ -8,3 +8,5 @@
 2. Iniciar o banco e as tabelas com: python3 manage.py makemigrations
 3. Iniciar o servidor com: python3 manage.py runserver 8089
 4. Api estará rodando em http://127.0.0.1:8089/
+
+1. Rodar os testes com: python3 manage.py test
